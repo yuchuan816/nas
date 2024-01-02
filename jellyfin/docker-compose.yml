@@ -1,0 +1,18 @@
+services:
+  jellyfin:
+    container_name: jellyfin
+    image: liuyuchuan/jellyfin:latest
+    restart: "unless-stopped"
+    environment:
+      TZ: Asia/Shanghai
+    ports:
+      - "8096:8096"
+    volumes:
+      - ./config:/config
+      - ./cache:/cache
+      - /mnt/common/shares/fonts:/media/fonts:ro
+      - /mnt/common/shares/.art:/media/art:ro
+      - /mnt/common/series:/media/series:ro
+      - /mnt/movies:/media/movies:ro
+    devices:
+      - /dev/dri:/dev/dri

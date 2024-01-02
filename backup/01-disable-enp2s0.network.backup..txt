@@ -1,0 +1,7 @@
+# /usr/lib/systemd/network
+
+[Match]
+MACAddress=44:8a:5b:d2:a9:5b
+
+[Link]
+Unmanaged=yes

@@ -1,0 +1,12 @@
+services:
+  ubuntu:
+    image: liuyuchuan/ubuntu:latest
+    container_name: ubuntu
+    environment:
+      - TZ=Asia/Shanghai
+    volumes:
+      - /home/tom/code:/home/develop/code
+      - /home/tom/.ssh:/home/develop/.ssh:ro
+    ports:
+      - 2222:22
+    restart: unless-stopped
