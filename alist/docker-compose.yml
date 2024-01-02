@@ -1,0 +1,14 @@
+services:
+  alist:
+    image: xhofe/alist:latest
+    container_name: alist
+    restart: unless-stopped
+    environment:
+      TZ: Asia/Shanghai
+      PUID: 1000
+      PGID: 1000
+      UMASK: 002
+    volumes:
+      - ./config:/opt/alist/data
+    ports:
+      - 5244:5244

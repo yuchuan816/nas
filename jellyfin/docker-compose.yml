@@ -1,0 +1,19 @@
+services:
+  jellyfin:
+    container_name: jellyfin
+    image: liuyuchuan/jellyfin:latest
+    restart: "unless-stopped"
+    environment:
+      PUID: 1000
+      PGID: 1000
+      TZ: Asia/Shanghai
+    ports:
+      - 8096:8096
+    volumes:
+      - ./config:/config
+      - /mnt/common/shares/fonts:/media/fonts:ro
+      - /mnt/common/shares/.art:/media/art:ro
+      - /mnt/series:/media/series:ro
+      - /mnt/movies:/media/movies:ro
+    devices:
+      - /dev/dri:/dev/dri

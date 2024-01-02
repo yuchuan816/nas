@@ -1,0 +1,11 @@
+[Unit]
+Description=Enable Wake-on-LAN
+Documentation=https://help.ubuntu.com/community/WakeOnLan
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/sbin/ethtool -s enp5s0 wol g
+
+[Install]
+WantedBy=network-online.target

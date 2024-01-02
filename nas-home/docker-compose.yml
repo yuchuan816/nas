@@ -1,0 +1,9 @@
+services:
+  nashome:
+    image: liuyuchuan/nas-home:latest
+    container_name: nashome
+    environment:
+      - TZ=Asia/Shanghai
+    ports:
+      - 8000:8000
+    restart: unless-stopped

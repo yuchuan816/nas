@@ -1,0 +1,4 @@
+# 备份目录
+0 15 * * * ls /mnt/movies > /home/tom/code/nas/backup/movies.txt
+0 15 * * * ls /mnt/series > /home/tom/code/nas/backup/series.txt
+0 15 * * * ls /mnt/common/shares/.art > /home/tom/code/nas/backup/art.txt
