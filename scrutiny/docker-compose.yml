@@ -9,8 +9,8 @@ services:
       - TZ=Asia/Shanghai
     volumes:
       - /run/udev:/run/udev:ro
-      - ./config:/opt/scrutiny/config
-      - ./influxdb:/opt/scrutiny/influxdb
+      - ./volumes/config:/opt/scrutiny/config
+      - ./volumes//influxdb:/opt/scrutiny/influxdb
     ports:
       - 8080:8080
     devices:

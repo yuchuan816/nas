@@ -4,12 +4,13 @@ services:
     image: liuyuchuan/jellyfin:latest
     restart: "unless-stopped"
     environment:
+      PUID: 1000
+      PGID: 1000
       TZ: Asia/Shanghai
     ports:
-      - "8096:8096"
+      - 8096:8096
     volumes:
       - ./config:/config
-      - ./cache:/cache
       - /mnt/common/shares/fonts:/media/fonts:ro
       - /mnt/common/shares/.art:/media/art:ro
       - /mnt/common/series:/media/series:ro

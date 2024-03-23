@@ -1,6 +1,6 @@
 # docker build -t liuyuchuan/jellyfin .
 
-FROM jellyfin/jellyfin:latest
+FROM lscr.io/linuxserver/jellyfin:latest
 
 RUN apt-get update
 

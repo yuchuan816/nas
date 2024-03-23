@@ -1,0 +1,11 @@
+network:
+  version: 2
+  ethernets:
+    enp2s0:
+      dhcp4: true
+    enp5s0:
+      dhcp4: true
+      dhcp6: false
+      addresses:
+        #  - 192.168.31.112/24
+        - 2409:8a04:1b51:1590:1e86:bff:fe26:fd45/64

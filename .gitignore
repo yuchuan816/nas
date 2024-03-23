@@ -1,6 +1,4 @@
 *.DS_Store
-/*/volume/
 /*/config/
-/*/cache/
-/*/influxdb/
+/*/volumes/
 .vscode
