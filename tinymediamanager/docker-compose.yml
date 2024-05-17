@@ -15,7 +15,7 @@ services:
       - /mnt/common/shares:/shares
 
       # - /mnt/movies:/movies
-      # - /mnt/common/series:/series
+      # - /mnt/series:/series
     ports:
       - 5900:5900 # VNC port
       - 4000:4000 # Webinterface

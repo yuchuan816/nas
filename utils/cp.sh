@@ -21,7 +21,7 @@ elif [ $OPTION = '2' ]; then
     # 拷贝series文件夹
     rsync -ah --preallocate --info=progress2 \
         /mnt/common/shares/factory-series/* \
-        /mnt/common/series/
+        /mnt/series/
 else
     echo "Unknown Option."
 fi

@@ -16,7 +16,7 @@ fi
 if [ $OPTION = '1' ]; then
     cd /mnt/movies
 elif [ $OPTION = '2' ]; then
-    cd /mnt/common/series
+    cd /mnt/series
 elif [ $OPTION = '3' ]; then
     cd /mnt/common/shares
 else

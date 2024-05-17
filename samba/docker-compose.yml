@@ -19,5 +19,5 @@ services:
     volumes:
       - /mnt/common/timemachine:/shares/timemachine
       - /mnt/common/shares:/shares/shares
-      - /mnt/common/series:/shares/series
+      - /mnt/series:/shares/series
       - /mnt/movies:/shares/movies
