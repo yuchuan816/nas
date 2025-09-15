@@ -4,12 +4,12 @@ services:
     container_name: windows
     privileged: true      # 需要特权模式
     environment:
-      VERSION: "10"       # Windows版本，如 "xp", "7", "10", "11"[5](@ref)
-      USERNAME: "liuyuchuan"  # 自定义用户名
+      # VERSION: "10"       # Windows版本，如 "xp", "7", "10", "11"[5](@ref)
+      USERNAME: "develop"  # 自定义用户名
       PASSWORD: "95816" # 自定义密码
       RAM_SIZE: "4G"      # 内存大小
       CPU_CORES: "2"      # CPU核心数
-      DISK_SIZE: "32G"   # 磁盘大小
+      DISK_SIZE: "16G"   # 磁盘大小
     ports:
       - "8006:8006"       # noVNC Web访问端口
       - "3389:3389/tcp"   # RDP端口 (可选映射)
@@ -17,6 +17,7 @@ services:
     devices:
       - "/dev/kvm"        # 传递KVM设备以加速（若宿主机支持）
     volumes:
+      # - ./volumes/SW_DVD9_WIN_ENT_LTSC_2021_64BIT_ChnSimp_MLF_X22-84402.iso:/boot.iso
       - ./volumes:/storage # 挂载存储卷，持久化系统数据
       - /mnt/common/shares/windows-storage:/data
     restart: unless-stopped

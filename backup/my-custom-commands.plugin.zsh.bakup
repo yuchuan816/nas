@@ -1,0 +1,29 @@
+# ~/.oh-my-zsh/custom/plugins/my-custom-commands/my-custom-commands.plugin.zsh
+
+#######################################
+# 媒体文件操作
+#######################################
+alias ucp='sh /home/tom/code/nas/utils/cp.sh'
+alias ucd='source /home/tom/code/nas/utils/cd.sh'
+
+#######################################
+# 代理
+#######################################
+alias setp='export https_proxy="http://192.168.31.112:7890";export http_proxy="http://192.168.31.112:7890";export all_proxy="socks5://192.168.31.112:7890";'
+alias unsetp='unset https_proxy; unset http_proxy; unset all_proxy; unset ALL_PROXY;'
+
+#######################################
+# 系统操作
+#######################################
+alias hdsleep='sudo hdparm -S 120 /dev/sda /dev/sdc /dev/sdd'
+alias hdstate='sudo hdparm -C /dev/sda /dev/sdc /dev/sdd'
+alias off='sudo shutdown now'
+alias apt-purge-all='sudo apt purge $@ && sudo apt autoremove --purge -y'
+alias m='micro'
+
+#######################################
+# Windows 虚拟机启停
+#######################################
+alias winup='sudo docker compose -f ~/code/nas/windows/docker-compose.yml up -d'
+alias windown='sudo docker compose -f ~/code/nas/windows/docker-compose.yml down'
+
