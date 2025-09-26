@@ -1,0 +1,13 @@
+# 这是顶层的配置，对所有文件生效
+root = true
+
+[*] # 匹配所有文件
+charset = utf-8 # 设置字符集为 UTF-8
+indent_style = space # 缩进风格为空格
+indent_size = 2 # 缩进大小为 2 个空格
+end_of_line = lf # 换行符为 LF (Unix/Linux 风格)
+insert_final_newline = true # 文件末尾自动插入一个空行
+trim_trailing_whitespace = true # 自动去除行尾的空格
+
+[*.md] # 只对 Markdown 文件生效
+trim_trailing_whitespace = false # 覆盖上面的规则，不去除行尾空格（因为MD中两个空格代表换行）
