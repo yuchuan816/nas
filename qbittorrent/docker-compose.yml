@@ -7,11 +7,12 @@ services:
       TZ: Asia/Shanghai
       PUID: 1000
       PGID: 1000
-      WEBUI_PORT: 8081
+      WEBUI_PORT: 8080
+      TORRENTING_PORT: 6881
     ports:
-      - 8081:8081
-      - 10881:10881
-      - 10881:10881/udp
+      - 8080:8080
+      - 6881:6881
+      - 6881:6881/udp
     volumes:
       - ./config:/config/qBittorrent
       - /mnt/common/shares/downloads:/downloads
