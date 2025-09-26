@@ -22,8 +22,28 @@ alias apt-purge-all='sudo apt purge $@ && sudo apt autoremove --purge -y'
 alias m='micro'
 
 #######################################
-# Windows 虚拟机启停
+# docker compose 快速操作
 #######################################
-alias winup='sudo docker compose -f ~/code/nas/windows/docker-compose.yml up -d'
-alias windown='sudo docker compose -f ~/code/nas/windows/docker-compose.yml down'
+fdc() {
+    local project="$1"
+    local action="$2"
+    local compose_file=""
+    shift 2  # 移除前两个参数，剩余参数传递给docker compose
+
+    case "$project" in
+        win)
+            compose_file="$HOME/code/nas/windows/docker-compose.yml"
+            ;;
+        # xxx)
+        #     compose_file="$HOME/code/nas/xxx/docker-compose.yml"
+        #     ;;
+        *)
+            echo "Error: Unknown project '$project'"
+            echo "Usage: fdc <project> <action> [options]"
+            return 1
+            ;;
+    esac
+
+    sudo docker compose -f "$compose_file" "$action" "$@"
+}
 
