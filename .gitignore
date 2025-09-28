@@ -1,5 +1,5 @@
 *.DS_Store
+*logs
 /*/config/
 /*/volumes/
 .vscode
-/backup/backup.log

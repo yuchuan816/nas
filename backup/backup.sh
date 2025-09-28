@@ -21,4 +21,4 @@ HOMER_ICONS="/home/tom/code/nas/homer/config/icons"
     /bin/cp "$HOMER_CONFIG" "$BACKUP_DIR/homer/config.yml.bak"
     /bin/cp -r "$HOMER_ICONS" "$BACKUP_DIR/homer/"
     echo "备份完成: $(date)"
-} >> "$BACKUP_DIR/backup.log" 2>&1 # 将标准输出和错误都重定向到日志文件
+} >> "$BACKUP_DIR/logs/backup.log" 2>&1 # 将标准输出和错误都重定向到日志文件

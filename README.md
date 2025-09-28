@@ -1,6 +1,12 @@
 # nas
 
+```
+docker network create webnet
+
+```
+
 ## 容器代理
+
 ```yaml
 environment:
   HTTP_PROXY: http://192.168.31.112:7890
@@ -8,6 +14,7 @@ environment:
 ```
 
 ## docker build 代理
+
 ```shell
 docker build . \
     --build-arg "HTTP_PROXY=http://192.168.31.112:7890" \
@@ -16,6 +23,7 @@ docker build . \
 ```
 
 ## docker pull 代理
+
 ```shell
 sudo mkdir -p /etc/systemd/system/docker.service.d
 sudo touch /etc/systemd/system/docker.service.d/http-proxy.conf
