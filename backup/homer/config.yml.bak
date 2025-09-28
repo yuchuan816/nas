@@ -81,8 +81,8 @@ links:
 # First level array represent a group.
 # Leave only a "items" key if not using group (group name, icon & tagstyle are optional, section separation will not be displayed).
 services:
-  - name: "Videos"
-    icon: "fa-solid fa-video"
+  - name: "Tools"
+    icon: "fa-solid fa-toolbox"
     items:
       - name: "Jellyfin"
         logo: "/assets/icons/jellyfin.svg"
@@ -105,40 +105,6 @@ services:
         url: "http://192.168.31.112:4000"
         target: "_blank"
 
-  - name: "System"
-    icon: "fa-solid fa-gears"
-    items:
-      - name: "Glances"
-        logo: "/assets/icons/glances.svg"
-        subtitle: ""
-        tag: "system"
-        url: "http://192.168.31.112:61208"
-        target: "_blank"
-
-      - name: "Scrutiny"
-        logo: "/assets/icons/scrutiny.svg"
-        subtitle: ""
-        tag: "system"
-        url: "http://192.168.31.112:8081"
-        target: "_blank"
-
-      - name: "FileBrowser"
-        logo: "/assets/icons/filebrowser.svg"
-        subtitle: ""
-        tag: "system"
-        url: "http://192.168.31.112:8088"
-        target: "_blank"
-
-      - name: "Windows 10"
-        logo: "/assets/icons/windows-10.svg"
-        subtitle: ""
-        tag: "system"
-        url: "http://192.168.31.112:8006"
-        target: "_blank"
-
-  - name: "Tools"
-    icon: "fa-solid fa-toolbox"
-    items:
       - name: "AList"
         logo: "/assets/icons/alist.svg"
         subtitle: ""
@@ -172,4 +138,42 @@ services:
         subtitle: ""
         tag: "tool"
         url: "http://192.168.31.112:8082/?lang=zh_CN"
+        target: "_blank"
+
+  - name: "System"
+    icon: "fa-solid fa-gears"
+    items:
+      - name: "Glances"
+        logo: "/assets/icons/glances.svg"
+        subtitle: ""
+        tag: "system"
+        url: "http://192.168.31.112:61208"
+        target: "_blank"
+
+      - name: "Scrutiny"
+        logo: "/assets/icons/scrutiny.svg"
+        subtitle: ""
+        tag: "system"
+        url: "http://192.168.31.112:8081"
+        target: "_blank"
+
+      - name: "WeTTY"
+        logo: "/assets/icons/wetty.svg"
+        subtitle: ""
+        tag: "system"
+        url: "http://192.168.31.112:3030"
+        target: "_blank"
+
+      - name: "FileBrowser"
+        logo: "/assets/icons/filebrowser.svg"
+        subtitle: ""
+        tag: "system"
+        url: "http://192.168.31.112:8088"
+        target: "_blank"
+
+      - name: "Windows 10"
+        logo: "/assets/icons/windows-10.svg"
+        subtitle: ""
+        tag: "system"
+        url: "http://192.168.31.112:8006"
         target: "_blank"

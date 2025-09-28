@@ -1,0 +1,27 @@
+services:
+  wetty:
+    image: wettyoss/wetty:latest
+    container_name: wetty
+    restart: unless-stopped
+    ports:
+      - "3030:3030"
+    volumes:
+      - /home/tom/.ssh/id_rsa:/home/tom/.ssh/id_rsa:ro
+      - ./known_hosts:/home/tom/.ssh/known_hosts
+    command:
+      - --ssh-host
+      - host.docker.internal
+      - --ssh-user
+      - tom
+      - --ssh-auth
+      - publickey
+      - --ssh-key
+      - /home/tom/.ssh/id_rsa
+      - --known-hosts
+      - /home/tom/.ssh/known_hosts
+      - --base
+      - "/"
+      - --port
+      - "3030"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
