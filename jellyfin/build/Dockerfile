@@ -1,6 +1,6 @@
 #docker build . \
-#    --build-arg "HTTP_PROXY=http://192.168.31.112:7890" \
-#    --build-arg "HTTPS_PROXY=http://192.168.31.112:7890" \
+#    --build-arg "HTTP_PROXY=http://192.168.31.112:20171" \
+#    --build-arg "HTTPS_PROXY=http://192.168.31.112:20171" \
 #    -t liuyuchuan/jellyfin
 
 FROM lscr.io/linuxserver/jellyfin:latest

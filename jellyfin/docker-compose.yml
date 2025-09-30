@@ -7,8 +7,8 @@ services:
       PUID: 1000
       PGID: 1000
       TZ: Asia/Shanghai
-    ports:
-      - 8096:8096
+    # ports:
+    #   - 8096:8096
     volumes:
       - ./config:/config
       - /mnt/common/shares/fonts:/media/fonts:ro
@@ -17,3 +17,9 @@ services:
       - /mnt/movies:/media/movies:ro
     devices:
       - /dev/dri:/dev/dri
+    networks:
+      - webnet
+
+networks:
+  webnet:
+    external: true

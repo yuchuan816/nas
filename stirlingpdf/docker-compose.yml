@@ -3,14 +3,22 @@ services:
     container_name: stirlingpdf
     image: frooodle/s-pdf:latest
     restart: unless-stopped
-    ports:
-      - 8082:8080
+    # ports:
+    #   - 8080:8080
     volumes:
       - ./config/trainingData:/usr/share/tessdata #Required for extra OCR languages
       - ./config/extraConfigs:/configs
     #      - ./customFiles:/customFiles/
     #      - ./logs:/logs/
     environment:
+      - HTTP_PROXY=http://192.168.31.112:20171
+      - HTTPS_PROXY=http://192.168.31.112:20171
       - DOCKER_ENABLE_SECURITY=false
       - INSTALL_BOOK_AND_ADVANCED_HTML_OPS=false
       - LANGS=zh_CN
+    networks:
+      - webnet
+
+networks:
+  webnet:
+    external: true

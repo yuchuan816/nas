@@ -1,0 +1,15 @@
+# Home Server 服务域名配置
+192.168.31.112 homer.home.server
+192.168.31.112 qbittorrent.home.server
+192.168.31.112 scrutiny.home.server
+192.168.31.112 jellyfin.home.server
+192.168.31.112 alist.home.server
+192.168.31.112 ariang.home.server
+192.168.31.112 v2raya.home.server
+192.168.31.112 filebrowser.home.server
+192.168.31.112 glances.home.server
+192.168.31.112 mkvtoolnix.home.server
+192.168.31.112 stirlingpdf.home.server
+192.168.31.112 tinymediamanager.home.server
+192.168.31.112 wetty.home.server
+192.168.31.112 windows.home.server

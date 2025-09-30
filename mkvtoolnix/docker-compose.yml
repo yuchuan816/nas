@@ -3,6 +3,8 @@ services:
     image: jlesage/mkvtoolnix:latest
     container_name: mkvtoolnix
     environment:
+      HTTP_PROXY: http://192.168.31.112:20171
+      HTTPS_PROXY: http://192.168.31.112:20171
       TZ: Asia/Shanghai
       USER_ID: 1000
       GROUP_ID: 1000
@@ -10,6 +12,12 @@ services:
     volumes:
       - ./config:/config
       - /mnt/common/shares:/shares
-    ports:
-      - 5800:5800
+    # ports:
+    #   - 5800:5800
     restart: unless-stopped
+    networks:
+      - webnet
+
+networks:
+  webnet:
+    external: true

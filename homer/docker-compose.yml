@@ -3,9 +3,15 @@ services:
     image: b4bz/homer
     container_name: homer
     volumes:
-      - ./config:/www/assets # Make sure your local config directory exists
-    ports:
-      - 80:8080
+      - ./homer-config:/www/assets # Make sure your local config directory exists
+    # ports:
+    #   - 8080:8080
     environment:
       - INIT_ASSETS=1 # default, requires the config directory to be writable for the container user (see user option)
     restart: unless-stopped
+    networks:
+      - webnet
+
+networks:
+  webnet:
+    external: true

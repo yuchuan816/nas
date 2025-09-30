@@ -10,12 +10,18 @@ services:
     volumes:
       - /run/udev:/run/udev:ro
       - ./volumes/config:/opt/scrutiny/config
-      - ./volumes//influxdb:/opt/scrutiny/influxdb
-    ports:
-      - 8081:8080
+      - ./volumes/influxdb:/opt/scrutiny/influxdb
+    # ports:
+    #   - 8080:8080
     devices:
       - /dev/sda:/dev/sda
       - /dev/sdb:/dev/sdb
       - /dev/sdc:/dev/sdc
       - /dev/sdd:/dev/sdd
     restart: unless-stopped
+    networks:
+      - webnet
+
+networks:
+  webnet:
+    external: true

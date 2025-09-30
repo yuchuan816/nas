@@ -3,8 +3,8 @@ services:
     image: wettyoss/wetty:latest
     container_name: wetty
     restart: unless-stopped
-    ports:
-      - "3030:3030"
+    # ports:
+    #   - "3000:3000"
     volumes:
       - /home/tom/.ssh/id_rsa:/home/tom/.ssh/id_rsa:ro
       - ./known_hosts:/home/tom/.ssh/known_hosts
@@ -22,6 +22,12 @@ services:
       - --base
       - "/"
       - --port
-      - "3030"
+      - "3000"
     extra_hosts:
       - "host.docker.internal:host-gateway"
+    networks:
+      - webnet
+
+networks:
+  webnet:
+    external: true

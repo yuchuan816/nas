@@ -5,12 +5,12 @@
 
 # 配置变量，使用绝对路径
 BACKUP_DIR="/home/tom/code/nas/backup"
+
 SOURCE_MOVIES="/mnt/movies"
 SOURCE_SERIES="/mnt/series"
 SOURCE_ART="/mnt/common/shares/.art/video"
 
-HOMER_CONFIG="/home/tom/code/nas/homer/config/config.yml"
-HOMER_ICONS="/home/tom/code/nas/homer/config/icons"
+OMZ_CONFIG="/home/tom/.oh-my-zsh/custom/plugins/my-custom-commands/my-custom-commands.plugin.zsh"
 
 # 执行备份，并输出日志
 {
@@ -18,7 +18,6 @@ HOMER_ICONS="/home/tom/code/nas/homer/config/icons"
     /usr/bin/ls "$SOURCE_MOVIES" > "$BACKUP_DIR/movies.txt"
     /usr/bin/ls "$SOURCE_SERIES" > "$BACKUP_DIR/series.txt"
     /usr/bin/ls "$SOURCE_ART" > "$BACKUP_DIR/art.txt"
-    /bin/cp "$HOMER_CONFIG" "$BACKUP_DIR/homer/config.yml.bak"
-    /bin/cp -r "$HOMER_ICONS" "$BACKUP_DIR/homer/"
+    /bin/cp "$OMZ_CONFIG" "$BACKUP_DIR/my-custom-commands.plugin.zsh.bak"
     echo "备份完成: $(date)"
 } >> "$BACKUP_DIR/logs/backup.log" 2>&1 # 将标准输出和错误都重定向到日志文件

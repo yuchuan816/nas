@@ -1,0 +1,31 @@
+# ~/.oh-my-zsh/custom/plugins/my-custom-commands/my-custom-commands.plugin.zsh
+
+HOME_DIR="/home/tom/"
+NAS_DIR="$HOME_DIR/code/nas/"
+
+#######################################
+# 媒体文件操作
+#######################################
+alias ucp="sh $NAS_DIR/utils/cp.sh"
+alias ucd="source $NAS_DIR/utils/cd.sh"
+
+#######################################
+# 代理
+#######################################
+alias setp='export https_proxy="http://192.168.31.112:20171";export http_proxy="http://192.168.31.112:20171";export all_proxy="socks5://192.168.31.112:20170";'
+alias unsetp='unset https_proxy; unset http_proxy; unset all_proxy; unset ALL_PROXY;'
+
+#######################################
+# 系统操作
+#######################################
+alias hdsleep='sudo hdparm -S 120 /dev/sda /dev/sdc /dev/sdd'
+alias hdstate='sudo hdparm -C /dev/sda /dev/sdc /dev/sdd'
+alias off='sudo shutdown now'
+alias apt-purge-all='sudo apt purge $@ && sudo apt autoremove --purge -y'
+alias m='micro'
+
+#######################################
+# docker compose 快速操作
+#######################################
+alias dcctl="$NAS_DIR/dcctl.sh"
+

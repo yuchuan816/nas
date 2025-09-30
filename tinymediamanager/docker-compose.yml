@@ -16,7 +16,13 @@ services:
 
       # - /mnt/movies:/movies
       # - /mnt/series:/series
-    ports:
-      - 5900:5900 # VNC port
-      - 4000:4000 # Webinterface
+    # ports:
+      # - 5900:5900 # VNC port
+      # - 4000:4000 # Webinterface
     restart: unless-stopped
+    networks:
+      - webnet
+
+networks:
+  webnet:
+    external: true

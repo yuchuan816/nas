@@ -10,5 +10,11 @@ services:
       UMASK: 002
     volumes:
       - ./config:/opt/alist/data
-    ports:
-      - 5244:5244
+    # ports:
+    #   - 5244:5244
+    networks:
+      - webnet
+
+networks:
+  webnet:
+    external: true

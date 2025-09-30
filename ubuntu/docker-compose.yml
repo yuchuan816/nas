@@ -10,5 +10,4 @@ services:
       - /home/tom/.gitconfig:/home/develop/.gitconfig:ro
     ports:
       - 2222:22
-      - 3000:3000
     restart: unless-stopped

@@ -30,10 +30,16 @@ services:
     container_name: ariang
     image: p3terx/ariang:latest
     command: --port 6880
-    ports:
-      - 6880:6880
+    # ports:
+    #   - 6880:6880
     restart: unless-stopped
     logging:
       driver: json-file
       options:
         max-size: 1m
+    networks:
+      - webnet
+
+networks:
+  webnet:
+    external: true

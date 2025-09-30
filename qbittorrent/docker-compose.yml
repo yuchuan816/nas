@@ -10,9 +10,15 @@ services:
       WEBUI_PORT: 8080
       TORRENTING_PORT: 6881
     ports:
-      - 8080:8080
+      # - 8080:8080
       - 6881:6881
       - 6881:6881/udp
     volumes:
       - ./config:/config/qBittorrent
       - /mnt/common/shares/downloads:/downloads
+    networks:
+      - webnet
+
+networks:
+  webnet:
+    external: true
