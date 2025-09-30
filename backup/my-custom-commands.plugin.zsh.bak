@@ -12,7 +12,7 @@ alias ucd="source $NAS_DIR/utils/cd.sh"
 #######################################
 # 代理
 #######################################
-alias setp='export https_proxy="http://192.168.31.112:20171";export http_proxy="http://192.168.31.112:20171";export all_proxy="socks5://192.168.31.112:20170";'
+alias setp='export https_proxy="http://home.server:20171";export http_proxy="http://home.server:20171";export all_proxy="socks5://home.server:20170";'
 alias unsetp='unset https_proxy; unset http_proxy; unset all_proxy; unset ALL_PROXY;'
 
 #######################################
@@ -27,5 +27,5 @@ alias m='micro'
 #######################################
 # docker compose 快速操作
 #######################################
-alias dcctl="$NAS_DIR/dcctl.sh"
+alias dcctl="$NAS_DIR/utils/dcctl.sh"
 

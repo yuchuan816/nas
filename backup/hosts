@@ -1,4 +1,5 @@
 # Home Server 服务域名配置
+192.168.31.112 home.server
 192.168.31.112 homer.home.server
 192.168.31.112 qbittorrent.home.server
 192.168.31.112 scrutiny.home.server
