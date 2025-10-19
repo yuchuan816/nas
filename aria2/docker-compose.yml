@@ -25,6 +25,8 @@ services:
       driver: json-file
       options:
         max-size: 1m
+    networks:
+      - webnet
 
   ariang:
     container_name: ariang

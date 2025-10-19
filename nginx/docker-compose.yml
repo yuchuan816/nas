@@ -1,7 +1,7 @@
 services:
-  nginx-proxy:
+  nginx:
     image: nginx:alpine
-    container_name: nginx-proxy
+    container_name: nginx
     environment:
       - TZ=Asia/Shanghai
     ports:

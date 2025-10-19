@@ -8,11 +8,11 @@ services:
       PUID: 1000
       PGID: 1000
       WEBUI_PORT: 8080
-      TORRENTING_PORT: 6881
+      TORRENTING_PORT: 59547
     ports:
       # - 8080:8080
-      - 6881:6881
-      - 6881:6881/udp
+      - 59547:59547
+      - 59547:59547/udp
     volumes:
       - ./config:/config/qBittorrent
       - /mnt/common/shares/downloads:/downloads

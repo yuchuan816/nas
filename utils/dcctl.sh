@@ -4,7 +4,7 @@
 # 支持 sudo 和 docker compose 命令
 
 # 配置区域 - 根据需求修改
-DEFAULT_PROJECT_DIR="./code/nas/"  # 默认项目根目录
+DEFAULT_PROJECT_DIR="/home/tom/code/nas/"  # 默认项目根目录
 NETWORK_NAME="webnet"              # 共享网络名称
 USE_SUDO=1                         # 1=使用sudo, 0=不使用sudo
 

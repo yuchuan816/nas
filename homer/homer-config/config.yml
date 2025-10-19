@@ -157,12 +157,12 @@ services:
         url: "http://scrutiny.home.server"
         target: "_blank"
 
-      - name: "WeTTY"
-        logo: "/assets/icons/wetty.svg"
-        subtitle: ""
-        tag: "system"
-        url: "http://wetty.home.server"
-        target: "_blank"
+      # - name: "WeTTY"
+      #   logo: "/assets/icons/wetty.svg"
+      #   subtitle: ""
+      #   tag: "system"
+      #   url: "http://wetty.home.server"
+      #   target: "_blank"
 
       - name: "FileBrowser"
         logo: "/assets/icons/filebrowser.svg"
