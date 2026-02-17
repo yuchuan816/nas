@@ -7,7 +7,7 @@ services:
       # VERSION: "10"       # Windows版本，如 "xp", "7", "10", "11"[5](@ref)
       USERNAME: "develop" # 自定义用户名
       PASSWORD: "95816" # 自定义密码
-      RAM_SIZE: "4G" # 内存大小
+      RAM_SIZE: "3G" # 内存大小
       CPU_CORES: "2" # CPU核心数
       DISK_SIZE: "16G" # 磁盘大小
     ports:

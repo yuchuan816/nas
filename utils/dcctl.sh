@@ -112,7 +112,7 @@ run_command() {
     local cmd_prefix
     cmd_prefix=$(docker_cmd)
     
-    echo "执行 [$command] 在项目: $1"
+    echo "执行: cd $project_dir && $cmd_prefix $command $@"
     (cd "$project_dir" && $cmd_prefix "$command" "$@")
 }
 
