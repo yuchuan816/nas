@@ -12,6 +12,7 @@ services:
       - /proc:/host/proc:ro # 读取进程信息
       - /:/mnt:ro # 只读挂载根目录，用于读取磁盘信息
     environment:
+      - TZ=Asia/Shanghai
       - GLANCES_OPT="-w --port 61208" # 环境变量方式指定参数
     networks:
       - webnet

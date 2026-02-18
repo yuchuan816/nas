@@ -6,8 +6,8 @@
 # 配置变量，使用绝对路径
 BACKUP_DIR="/home/tom/code/nas/backup"
 
-SOURCE_MOVIES="/mnt/movies"
-SOURCE_SERIES="/mnt/series"
+SOURCE_MOVIES="/mnt/movies/library"
+SOURCE_SERIES="/mnt/series/library"
 SOURCE_ART="/mnt/common/shares/.art/video"
 
 OMZ_CONFIG="/home/tom/.oh-my-zsh/custom/plugins/my-custom-commands/my-custom-commands.plugin.zsh"

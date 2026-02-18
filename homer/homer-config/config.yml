@@ -133,12 +133,19 @@ services:
         url: "http://v2raya.home.server"
         target: "_blank"
 
-      - name: "Stirling-PDF"
-        logo: "/assets/icons/stirling-pdf.svg"
+      - name: "IT Tools"
+        logo: "/assets/icons/it-tools.svg"
         subtitle: ""
         tag: "tool"
-        url: "http://stirlingpdf.home.server/?lang=zh_CN"
+        url: "http://ittools.home.server"
         target: "_blank"
+
+      # - name: "Stirling-PDF"
+      #   logo: "/assets/icons/stirling-pdf.svg"
+      #   subtitle: ""
+      #   tag: "tool"
+      #   url: "http://stirlingpdf.home.server/?lang=zh_CN"
+      #   target: "_blank"
 
   - name: "System"
     icon: "fa-solid fa-gears"
@@ -148,6 +155,13 @@ services:
         subtitle: ""
         tag: "system"
         url: "http://glances.home.server"
+        target: "_blank"
+
+      - name: "Dozzle"
+        logo: "/assets/icons/dozzle.svg"
+        subtitle: ""
+        tag: "system"
+        url: "http://dozzle.home.server"
         target: "_blank"
 
       - name: "Scrutiny"

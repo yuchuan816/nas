@@ -1,0 +1,15 @@
+services:
+  ittools:
+    image: corentinth/it-tools:latest
+    container_name: ittools
+    restart: unless-stopped
+    # ports:
+    #   - 80:80
+    environment:
+      - TZ=Asia/Shanghai
+    networks:
+      - webnet
+
+networks:
+  webnet:
+    external: true

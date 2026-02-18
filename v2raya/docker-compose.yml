@@ -7,6 +7,7 @@ services:
       - "20170:20170" # socks5
       - "20171:20171" # http
     environment:
+      - TZ=Asia/Shanghai
       - V2RAYA_V2RAY_BIN=/usr/local/bin/v2ray
       - V2RAYA_LOG_FILE=/tmp/v2raya.log
     volumes:

@@ -31,6 +31,8 @@ services:
   ariang:
     container_name: ariang
     image: p3terx/ariang:latest
+    environment:
+      - TZ=Asia/Shanghai
     command: --port 6880
     # ports:
     #   - 6880:6880

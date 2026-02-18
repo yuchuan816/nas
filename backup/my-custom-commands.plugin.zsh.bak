@@ -6,8 +6,8 @@ NAS_DIR="$HOME_DIR/code/nas/"
 #######################################
 # 媒体文件操作
 #######################################
-alias ucp="sh $NAS_DIR/utils/cp.sh"
-alias ucd="source $NAS_DIR/utils/cd.sh"
+alias ucp="zsh $NAS_DIR/utils/cp.zsh"
+alias ucd="source $NAS_DIR/utils/cd.zsh"
 
 #######################################
 # 代理
@@ -27,5 +27,4 @@ alias m='micro'
 #######################################
 # docker compose 快速操作
 #######################################
-alias dcctl="$NAS_DIR/utils/dcctl.sh"
-
+alias dcctl="zsh $NAS_DIR/utils/dcctl.zsh"

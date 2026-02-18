@@ -6,3 +6,4 @@ network:
       dhcp4: true
     enp5s0:
       dhcp4: true
+      wakeonlan: true

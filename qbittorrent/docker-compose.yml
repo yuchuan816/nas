@@ -4,11 +4,11 @@ services:
     image: linuxserver/qbittorrent:latest
     restart: unless-stopped
     environment:
-      TZ: Asia/Shanghai
-      PUID: 1000
-      PGID: 1000
-      WEBUI_PORT: 8080
-      TORRENTING_PORT: 59547
+      - TZ=Asia/Shanghai
+      - PUID=1000
+      - PGID=1000
+      - WEBUI_PORT=8080
+      - TORRENTING_PORT=59547
     ports:
       # - 8080:8080
       - 59547:59547

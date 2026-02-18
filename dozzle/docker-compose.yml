@@ -1,0 +1,22 @@
+services:
+  dozzle:
+    image: amir20/dozzle:latest
+    container_name: dozzle
+    restart: unless-stopped
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro  # 核心：读取容器日志
+    # ports:
+    #   - 8080:8080 
+    environment:
+      - TZ=Asia/Shanghai
+      - DOZZLE_LEVEL=info
+      # - DOZZLE_USERNAME=tom        # 如果需要设置登录密码，取消这两行注释
+      # - DOZZLE_PASSWORD=95816
+    security_opt:
+      - no-new-privileges:true  # 增强安全性
+    networks:
+      - webnet
+
+networks:
+  webnet:
+    external: true

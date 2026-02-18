@@ -9,6 +9,7 @@ services:
       - /mnt/common/shares:/srv/shares
       - ./config:/config
     environment:
+      - TZ=Asia/Shanghai
       - FB_DATABASE=/config/filebrowser.db
       - FB_ROOT=/srv/shares # 设置默认根目录
       - FB_RULES=/config/rules.json # 自定义权限规则
