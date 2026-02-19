@@ -46,7 +46,7 @@
             "restart:重启项目"
             "ps:查看状态"
             "logs:查看日志 (-f)"
-            "list:列出所有可用项目"
+            "ls:列出所有可用项目"
             "init:初始化网络 (${NETWORK_NAME})"
         )
 
@@ -81,7 +81,7 @@
     # 3. 处理全局命令
     case "$cmd_arg" in
         init) ensure_network; return 0 ;;
-        list) echo "📂 可用项目:"; get_projects | sed 's/^/  /'; return 0 ;;
+        ls) echo "📂 可用项目:"; get_projects | sed 's/^/  /'; return 0 ;;
     esac
 
     # 4. 项目匹配逻辑

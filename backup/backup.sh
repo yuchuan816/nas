@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 每天15点执行
-# 0 15 * * * /home/tom/code/nas/backup/backup.sh
+# 0 3 * * * /home/tom/code/nas/backup/backup.sh
 
 # 配置变量，使用绝对路径
 BACKUP_DIR="/home/tom/code/nas/backup"

@@ -1,0 +1,18 @@
+services:
+  watchtower:
+    image: containrrr/watchtower:latest
+    container_name: watchtower
+    restart: unless-stopped
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - DOCKER_API_VERSION=1.53
+      # 0 0 3 * * * 表示每天凌晨 03:00:00 执行
+      - WATCHTOWER_SCHEDULE=0 0 3 * * *
+      # 依然保留自动清理旧镜像
+      - WATCHTOWER_CLEANUP=true
+      # 让 Watchtower 的检查请求走代理
+      - HTTP_PROXY=http://home.server:20171
+      - HTTPS_PROXY=http://home.server:20171
+      # 确保时区正确，否则它会按 UTC 时间（早 8 点）运行
+      - TZ=Asia/Shanghai

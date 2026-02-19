@@ -164,6 +164,13 @@ services:
         url: "http://dozzle.home.server"
         target: "_blank"
 
+      - name: "Nginx Proxy Manager"
+        logo: "/assets/icons/nginx-proxy-manager.svg"
+        subtitle: ""
+        tag: "system"
+        url: "http://home.server:81"
+        target: "_blank"
+
       - name: "Scrutiny"
         logo: "/assets/icons/scrutiny.svg"
         subtitle: ""
@@ -189,5 +196,5 @@ services:
         logo: "/assets/icons/windows-10.svg"
         subtitle: ""
         tag: "system"
-        url: "http://windows.home.server:8006"
+        url: "http://windows.home.server"
         target: "_blank"

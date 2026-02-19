@@ -2,6 +2,7 @@ services:
   windows:
     image: dockurr/windows # 或 dockur/windows
     container_name: windows
+    restart: on-failure:3
     privileged: true # 需要特权模式
     environment:
       # VERSION: "10"       # Windows版本，如 "xp", "7", "10", "11"[5](@ref)
@@ -11,7 +12,7 @@ services:
       CPU_CORES: "2" # CPU核心数
       DISK_SIZE: "16G" # 磁盘大小
     ports:
-      - "8006:8006" # noVNC Web访问端口
+      # - "8006:8006" # noVNC Web访问端口
       - "3389:3389/tcp" # RDP端口 (可选映射)
       - "3389:3389/udp" # RDP端口 (可选映射)
     devices:
@@ -20,4 +21,9 @@ services:
       # - ./volumes/SW_DVD9_WIN_ENT_LTSC_2021_64BIT_ChnSimp_MLF_X22-84402.iso:/boot.iso
       - ./volumes:/storage # 挂载存储卷，持久化系统数据
       - /mnt/common/shares/windows-storage:/data
-    restart: on-failure:3
+    networks:
+      - webnet
+
+networks:
+  webnet:
+    external: true

@@ -1,0 +1,21 @@
+services:
+  nginx:
+    image: nginx:alpine
+    container_name: nginx
+    environment:
+      - TZ=Asia/Shanghai
+    ports:
+      - "80:80"
+      - "443:443" # 为后续 HTTPS 准备
+    volumes:
+      - ./nginx-config/proxy-headers.conf:/etc/nginx/proxy-headers.conf:ro
+      - ./nginx-config/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx-config/conf.d:/etc/nginx/conf.d:ro
+      - ./nginx-config/logs:/var/log/nginx
+    restart: unless-stopped
+    networks:
+      - webnet
+
+networks:
+  webnet:
+    external: true

@@ -1,0 +1,20 @@
+services:
+  app:
+    image: 'jc21/nginx-proxy-manager:latest'
+    container_name: nginxproxymanager
+    restart: unless-stopped
+    ports:
+      - '80:80'
+      - '81:81'
+      - '443:443'
+    environment:
+      - TZ=Asia/Shanghai
+    volumes:
+      - ./config/data:/data
+      - ./config/letsencrypt:/etc/letsencrypt
+    networks:
+      - webnet
+
+networks:
+  webnet:
+    external: true

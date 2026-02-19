@@ -1,0 +1,12 @@
+# /etc/netplan
+# 网络配置文件
+
+network:
+  version: 2
+  ethernets:
+    enp2s0:
+      # 将网卡状态设置为down
+      states: down
+    enp5s0:
+      dhcp4: true
+      wakeonlan: true

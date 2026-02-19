@@ -10,8 +10,8 @@ services:
       UID_liuyuchuan: 1000
       GROUPS_liuyuchuan: 1000
       SAMBA_VOLUME_CONFIG_shares: "[Shares]; path=/shares/shares; valid users = liuyuchuan; guest ok = no; browsable = yes; read only = no;"
-      SAMBA_VOLUME_CONFIG_movies: "[Movies]; path=/shares/movies; valid users = liuyuchuan; guest ok = no; browsable = yes; read only = yes;"
-      SAMBA_VOLUME_CONFIG_series: "[Series]; path=/shares/series; valid users = liuyuchuan; guest ok = no; browsable = yes; read only = yes;"
+      SAMBA_VOLUME_CONFIG_movies: "[Movies]; path=/shares/movies/library; valid users = liuyuchuan; guest ok = no; browsable = yes; read only = yes;"
+      SAMBA_VOLUME_CONFIG_series: "[Series]; path=/shares/series/library; valid users = liuyuchuan; guest ok = no; browsable = yes; read only = yes;"
       SAMBA_VOLUME_CONFIG_timemachine: "[TimeMachine]; path=/shares/timemachine; valid users = liuyuchuan; guest ok = no; read only = no; browseable = yes; fruit:time machine = yes; fruit:time machine max size = 500G"
     ports:
       - 139:139

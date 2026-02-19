@@ -10,6 +10,8 @@ services:
       - TZ=Asia/Shanghai
       - V2RAYA_V2RAY_BIN=/usr/local/bin/v2ray
       - V2RAYA_LOG_FILE=/tmp/v2raya.log
+    labels:
+      - "com.centurylinklabs.watchtower.enable=false"      
     volumes:
       - ./config:/etc/v2raya
     restart: unless-stopped
