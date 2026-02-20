@@ -1,8 +1,9 @@
+# admin:liuyuchuan
 services:
   jellyfin:
     container_name: jellyfin
     image: linuxserver/jellyfin:latest
-    restart: "unless-stopped"
+    restart: unless-stopped
     environment:
       - PUID=1000
       - PGID=1000
@@ -22,7 +23,6 @@ services:
       - /dev/dri:/dev/dri
     networks:
       - webnet
-
 networks:
   webnet:
     external: true

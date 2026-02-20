@@ -1,3 +1,4 @@
+# admin:liuyuchuan95816
 services:
   dockge:
     image: louislam/dockge:latest
@@ -15,7 +16,6 @@ services:
       - DOCKGE_STACKS_DIR=/home/tom/code/nas
     networks:
       - webnet
-
 networks:
   webnet:
     external: true

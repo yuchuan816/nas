@@ -1,3 +1,4 @@
+#admin:liuyuchuan
 services:
   alist:
     image: xhofe/alist:latest
@@ -7,14 +8,13 @@ services:
       TZ: Asia/Shanghai
       PUID: 1000
       PGID: 1000
-      UMASK: 002
+      UMASK: 2
     volumes:
       - ./config:/opt/alist/data
     # ports:
     #   - 5244:5244
     networks:
       - webnet
-
 networks:
   webnet:
     external: true

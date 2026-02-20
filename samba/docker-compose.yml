@@ -6,18 +6,18 @@ services:
     environment:
       TZ: Asia/Shanghai
       AVAHI_NAME: StorageServer
-      ACCOUNT_liuyuchuan: 95816
-      UID_liuyuchuan: 1000
-      GROUPS_liuyuchuan: 1000
-      SAMBA_VOLUME_CONFIG_shares: "[Shares]; path=/shares/shares; valid users = liuyuchuan; guest ok = no; browsable = yes; read only = no;"
-      SAMBA_VOLUME_CONFIG_movies: "[Movies]; path=/shares/movies/library; valid users = liuyuchuan; guest ok = no; browsable = yes; read only = yes;"
-      SAMBA_VOLUME_CONFIG_series: "[Series]; path=/shares/series/library; valid users = liuyuchuan; guest ok = no; browsable = yes; read only = yes;"
-      SAMBA_VOLUME_CONFIG_timemachine: "[TimeMachine]; path=/shares/timemachine; valid users = liuyuchuan; guest ok = no; read only = no; browseable = yes; fruit:time machine = yes; fruit:time machine max size = 500G"
+      ACCOUNT_tom: 95816
+      UID_tom: 1000
+      GROUPS_tom: 1000
+      SAMBA_VOLUME_CONFIG_shares: "[Shares]; path=/shares/shares; valid users = tom; guest ok = no; browsable = yes; read only = no;"
+      SAMBA_VOLUME_CONFIG_movies: "[Movies]; path=/shares/movies; valid users = tom; guest ok = no; browsable = yes; read only = yes;"
+      SAMBA_VOLUME_CONFIG_series: "[Series]; path=/shares/series; valid users = tom; guest ok = no; browsable = yes; read only = yes;"
+      SAMBA_VOLUME_CONFIG_timemachine: "[TimeMachine]; path=/shares/timemachine; valid users = tom; guest ok = no; read only = no; browseable = yes; fruit:time machine = yes; fruit:time machine max size = 500G"
     ports:
       - 139:139
       - 445:445
     volumes:
       - /mnt/common/timemachine:/shares/timemachine
       - /mnt/common/shares:/shares/shares
-      - /mnt/series:/shares/series
-      - /mnt/movies:/shares/movies
+      - /mnt/series/library:/shares/series
+      - /mnt/movies/library:/shares/movies

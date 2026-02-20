@@ -157,13 +157,6 @@ services:
         url: "http://scrutiny.home.server"
         target: "_blank"
 
-      - name: "FileBrowser"
-        logo: "/assets/icons/filebrowser.svg"
-        subtitle: ""
-        tag: "system"
-        url: "http://filebrowser.home.server"
-        target: "_blank"
-
       - name: "Dozzle"
         logo: "/assets/icons/dozzle.svg"
         subtitle: ""
@@ -190,6 +183,13 @@ services:
         subtitle: ""
         tag: "system"
         url: "http://home.server:81"
+        target: "_blank"
+
+      - name: "FileBrowser"
+        logo: "/assets/icons/filebrowser.svg"
+        subtitle: ""
+        tag: "system"
+        url: "http://filebrowser.home.server"
         target: "_blank"
 
       - name: "Windows 10"

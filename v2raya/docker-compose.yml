@@ -1,23 +1,23 @@
+#admin:liuyuchuan
 services:
   v2ray:
     image: mzz2017/v2raya
     container_name: v2raya
     ports:
       # - "2017:2017"
-      - "20170:20170" # socks5
-      - "20171:20171" # http
+      - 20170:20170 # socks5
+      - 20171:20171 # http
     environment:
       - TZ=Asia/Shanghai
       - V2RAYA_V2RAY_BIN=/usr/local/bin/v2ray
       - V2RAYA_LOG_FILE=/tmp/v2raya.log
     labels:
-      - "com.centurylinklabs.watchtower.enable=false"      
+      - com.centurylinklabs.watchtower.enable=false
     volumes:
       - ./config:/etc/v2raya
     restart: unless-stopped
     networks:
       - webnet
-
 networks:
   webnet:
     external: true
