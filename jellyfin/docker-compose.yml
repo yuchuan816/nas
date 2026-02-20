@@ -1,12 +1,15 @@
 services:
   jellyfin:
     container_name: jellyfin
-    image: liuyuchuan/jellyfin:latest
+    image: linuxserver/jellyfin:latest
     restart: "unless-stopped"
     environment:
-      PUID: 1000
-      PGID: 1000
-      TZ: Asia/Shanghai
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Shanghai
+      # 启用 Docker Mods 功能
+      - DOCKER_MODS=linuxserver/mods:universal-package-install
+      - INSTALL_PACKAGES=fonts-noto-cjk-extra intel-media-va-driver
     # ports:
     #   - 8096:8096
     volumes:

@@ -1,0 +1,21 @@
+services:
+  dockge:
+    image: louislam/dockge:latest
+    container_name: dockge
+    restart: unless-stopped
+    # ports:
+    #   - 5001:5001
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./volumes/data:/app/data
+      # 映射所有 Stacks
+      - /home/tom/code/nas:/home/tom/code/nas
+    environment:
+      # 告诉 Dockge 你的 compose 文件都在容器内的这个路径下
+      - DOCKGE_STACKS_DIR=/home/tom/code/nas
+    networks:
+      - webnet
+
+networks:
+  webnet:
+    external: true

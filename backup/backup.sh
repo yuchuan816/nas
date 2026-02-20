@@ -18,6 +18,6 @@ OMZ_CONFIG="/home/tom/.oh-my-zsh/custom/plugins/my-custom-commands/my-custom-com
     /usr/bin/ls "$SOURCE_MOVIES" > "$BACKUP_DIR/movies.txt"
     /usr/bin/ls "$SOURCE_SERIES" > "$BACKUP_DIR/series.txt"
     /usr/bin/ls "$SOURCE_ART" > "$BACKUP_DIR/art.txt"
-    /bin/cp "$OMZ_CONFIG" "$BACKUP_DIR/my-custom-commands.plugin.zsh.bak"
+    /bin/cp "$OMZ_CONFIG" "$BACKUP_DIR/my-custom-commands.plugin.zsh"
     echo "备份完成: $(date)"
 } >> "$BACKUP_DIR/logs/backup.log" 2>&1 # 将标准输出和错误都重定向到日志文件
