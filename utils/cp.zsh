@@ -1,15 +1,14 @@
 #!/bin/zsh
 
-# 使用匿名函数包裹，确保 source 执行时也不会污染环境
 () {
     local tag desc src dst
-    # 配置区：一行就是一个完整的任务，非常易读
+    # 配置区
     local copy_config=(
         "1" "Movies" "/mnt/common/shares/factory-movies" "/mnt/movies/library"
         "2" "Series" "/mnt/common/shares/factory-series" "/mnt/series/library"
     )
 
-    # 1. 构造菜单（Zsh 的数组处理非常强大，直接切片拼接）
+    # 1. 构造菜单
     local menu_args=()
     for tag desc src dst in "${copy_config[@]}"; do
         menu_args+=("$tag" "$desc")

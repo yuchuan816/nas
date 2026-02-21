@@ -1,6 +1,5 @@
 #!/bin/zsh
 
-# 使用匿名函数包裹，防止变量污染
 () {
     # --- 配置区域 ---
     local DEFAULT_PROJECT_DIR="/home/tom/code/nas"

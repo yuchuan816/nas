@@ -11,8 +11,8 @@ services:
       # 启用 Docker Mods 功能
       - DOCKER_MODS=linuxserver/mods:universal-package-install
       - INSTALL_PACKAGES=fonts-noto-cjk-extra intel-media-va-driver
-    # ports:
-    #   - 8096:8096
+      # ports:
+      #   - 8096:8096
     volumes:
       - ./config:/config
       - /mnt/common/shares/fonts:/media/fonts:ro
