@@ -12,7 +12,7 @@ services:
       - TORRENTING_PORT=59547
     ports:
       # - 8080:8080
-      - 59547:59547
+      - 59547:59547/tcp
       - 59547:59547/udp
     volumes:
       - ./config:/config/qBittorrent

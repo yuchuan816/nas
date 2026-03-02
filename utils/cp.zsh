@@ -27,7 +27,6 @@
             echo "📂 正在导入 $desc (已过滤隐藏文件)..."
             mkdir -p "$dst"
             
-            # 核心修改点
             rsync -ah --preallocate --info=progress2 --exclude=".*" "$src/" "$dst/"
             
             echo "✅ $desc 导入完成！"

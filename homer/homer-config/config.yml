@@ -182,7 +182,7 @@ services:
         logo: "/assets/icons/nginx-proxy-manager.svg"
         subtitle: ""
         tag: "system"
-        url: "http://home.server:81"
+        url: "http://nginxproxymanager.home.server"
         target: "_blank"
 
       - name: "FileBrowser"

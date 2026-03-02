@@ -23,10 +23,11 @@ alias myip='curl -L ip.p3terx.com'
 #######################################
 alias hdsleep='sudo hdparm -S 120 /dev/sda /dev/sdc /dev/sdd'
 alias hdstate='sudo hdparm -C /dev/sda /dev/sdc /dev/sdd'
+alias apt-purge-all='sudo apt purge $@ && sudo apt autoremove --purge -y'
+alias rcp='rsync -avh --progress'
 
 # 关机二次确认
 alias off='echo -n "确定要关机吗? (y/N): "; read ans; [[ "$ans" == "y" || "$ans" == "Y" ]] && sudo shutdown now'
-alias apt-purge-all='sudo apt purge $@ && sudo apt autoremove --purge -y'
 
 #######################################
 # docker compose 快速操作

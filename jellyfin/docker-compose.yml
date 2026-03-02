@@ -8,6 +8,8 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=Asia/Shanghai
+      - HTTP_PROXY=http://home.server:20171
+      - HTTPS_PROXY=http://home.server:20171
       # 启用 Docker Mods 功能
       - DOCKER_MODS=linuxserver/mods:universal-package-install
       - INSTALL_PACKAGES=fonts-noto-cjk-extra intel-media-va-driver
