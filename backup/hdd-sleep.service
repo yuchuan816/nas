@@ -1,0 +1,12 @@
+[Unit]
+Description=Set HDD Spindown Timeout
+
+[Service]
+Type=oneshot
+ExecStart=/usr/sbin/hdparm -S 120 /dev/sda
+ExecStart=/usr/sbin/hdparm -S 120 /dev/sdc
+ExecStart=/usr/sbin/hdparm -S 120 /dev/sdd
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

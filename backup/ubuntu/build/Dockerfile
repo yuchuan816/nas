@@ -16,11 +16,6 @@ USER ${user}
 RUN curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | zsh || true
 COPY .zshrc /home/${user}/.zshrc
 
-# nvm
-RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
-ENV NVM_DIR /home/${user}/.nvm/
-RUN . ${NVM_DIR}/nvm.sh && nvm install 'lts/*'
-
 # keep running
 USER root
 RUN usermod -s /bin/zsh ${user}

@@ -1,8 +1,5 @@
 #!/bin/zsh
 
-# 每天3点执行
-# 0 3 * * * /bin/zsh /home/tom/code/nas/backup/backup.zsh
-
 () {
     # 使用 local 声明局部变量
     local BACKUP_DIR="/home/tom/code/nas/backup"

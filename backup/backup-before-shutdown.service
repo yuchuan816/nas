@@ -1,0 +1,14 @@
+[Unit]
+Description=Run Backup Script Before Shutdown
+# 确保在所有文件系统还挂载着的时候运行
+DefaultDependencies=no
+Before=shutdown.target reboot.target halt.target
+
+[Service]
+Type=oneshot
+ExecStart=/bin/zsh /home/tom/code/nas/utils/backup.zsh
+# 超时设置，防止卡死
+TimeoutStartSec=300
+
+[Install]
+WantedBy=halt.target reboot.target shutdown.target
