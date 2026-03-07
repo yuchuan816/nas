@@ -1,0 +1,20 @@
+services:
+  postfix:
+    image: boky/postfix:latest
+    container_name: postfix
+    restart: unless-stopped
+    # ports:
+    #   - "587:587"
+    environment:
+      # 基础设置
+      - TZ=Asia/Shanghai
+      - ALLOWED_SENDER_DOMAINS=qq.com        # 允许发信的域名后缀
+      
+      # 上游 SMTP 服务器设置
+      - RELAYHOST=[smtp.qq.com]:587           # QQ 邮箱的 SMTP 地址和端口
+      - RELAYHOST_USERNAME=${QQ_MAIL_USER}
+      - RELAYHOST_PASSWORD=${QQ_MAIL_PASS}    # 16 位授权码
+      
+      # 安全与网络
+      - POSTFIX_smtp_tls_security_level=may  # 自动使用 TLS 加密
+      - POSTFIX_mynetworks=127.0.0.0/8,10.0.0.0/8,172.16.0.0/12,192.168.0.0/16

@@ -1,6 +1,6 @@
+# ~/.oh-my-zsh/custom/plugins/my-custom-commands/my-custom-commands.plugin.zsh
 #!/bin/zsh
 
-# ~/.oh-my-zsh/custom/plugins/my-custom-commands/my-custom-commands.plugin.zsh
 () {
     # 局部变量定义，函数执行完后自动注销
     local _MY_HOME_DIR="/home/tom"

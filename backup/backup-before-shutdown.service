@@ -1,14 +1,16 @@
 [Unit]
 Description=Run Backup Script Before Shutdown
-# 确保在所有文件系统还挂载着的时候运行
 DefaultDependencies=no
-Before=shutdown.target reboot.target halt.target
+Before=shutdown.target reboot.target
+# 确保在 Docker 里的邮件服务停止之前运行
+After=docker.service
+Requires=docker.service
 
 [Service]
 Type=oneshot
 ExecStart=/bin/zsh /home/tom/code/nas/utils/backup.zsh
-# 超时设置，防止卡死
-TimeoutStartSec=300
+TimeoutStopSec=300
+RemainAfterExit=yes
 
 [Install]
-WantedBy=halt.target reboot.target shutdown.target
+WantedBy=shutdown.target reboot.target

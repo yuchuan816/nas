@@ -1,0 +1,19 @@
+services:
+  uptimekuma:
+    image: louislam/uptime-kuma:latest
+    container_name: uptimekuma
+    environment:
+      - TZ=Asia/Shanghai
+    volumes:
+      - ./config:/app/data
+      # 挂载宿主机的 docker.sock 可以让 Kuma 直接监控其他容器的状态
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - "3001:3001"
+    restart: unless-stopped
+    networks:
+      - webnet
+
+networks:
+  webnet:
+    external: true

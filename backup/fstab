@@ -1,0 +1,11 @@
+# /etc/fstab: static file system information.
+
+# >>> [RAM Disk] - 高频读写缓冲区 (2G 动态占用)
+tmpfs  /mnt/ramdisk  tmpfs  defaults,size=2G,mode=1777,nodev,nosuid  0  0
+
+# >>> [HDD Data Drives] - 物理硬盘挂载 (noatime 减少读写)
+UUID=884de2b7-c534-4c36-aa85-aeb2abc3d4df  /mnt/common  ext4  defaults,noatime  0  2
+
+UUID=5766e4b0-ead6-4fc4-9d83-076da586e296  /mnt/series  ext4  defaults,noatime  0  2
+
+UUID=37d278ea-0b9b-40cc-99ba-deaec8320e11  /mnt/movies  ext4  defaults,noatime  0  2

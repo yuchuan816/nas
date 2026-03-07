@@ -8,7 +8,7 @@ environment:
 ```
 
 ## docker build 代理
-```shell
+```sh
 docker build . \
     --build-arg "HTTP_PROXY=http://home.server:20171" \
     --build-arg "HTTPS_PROXY=http://home.server:20171" \
@@ -16,7 +16,7 @@ docker build . \
 ```
 
 ## docker pull 代理
-```shell
+```sh
 sudo mkdir -p /etc/systemd/system/docker.service.d
 sudo touch /etc/systemd/system/docker.service.d/http-proxy.conf
 

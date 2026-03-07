@@ -1,0 +1,31 @@
+#!/bin/zsh
+
+# /usr/local/bin/notify
+
+FROM_EMAIL="570692570@qq.com"
+TO_EMAIL="liuyuchuan816@live.com"
+CONTAINER_NAME="postfix"
+HOSTNAME=$(hostname)  # 获取你的 NAS 主机名
+
+# --- 定义邮件页脚 ---
+FOOTER="
+--------------------------------------
+本邮件由 NAS 自动化脚本自动发出
+主机节点: ${HOSTNAME}
+发送时间: $(date '+%Y-%m-%d %H:%M:%S')
+"
+
+SUBJECT=$1
+BODY=${2:-$(cat)}
+
+# 使用 Docker 内部调用
+docker exec -i ${CONTAINER_NAME} sendmail -t -f "${FROM_EMAIL}" <<EOF
+To: ${TO_EMAIL}
+From: ${FROM_EMAIL}
+Subject: ${SUBJECT}
+Content-Type: text/plain; charset="utf-8"
+
+${BODY}
+
+${FOOTER}
+EOF
