@@ -1,6 +1,6 @@
 #!/bin/sh
 
-#/root/sys_monitor.sh
+# /root/sys_monitor.sh
 # 监控内存、存储和连接数，并在异常时发送邮件通知
 
 # --- 配置区 ---

@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-# /usr/local/bin/notify
+# /usr/local/bin/notify/nas-mail
 
 FROM_EMAIL="570692570@qq.com"
 TO_EMAIL="liuyuchuan816@live.com"

@@ -4,9 +4,6 @@
 # [监控] 每小时检查系统状态：存储空间或内存不足时触发邮件告警
 0 * * * * /root/sys_monitor.sh
 
-# [流量] 每 6 小时同步一次 vnStat 流量数据库到闪存，防止断电丢数
-0 */6 * * * /etc/init.d/vnstat_backup backup
-
 # [计划] 每天 22:00 定时熄灭面板指示灯 (进入睡眠模式)
 0 22 * * * echo 0 > /sys/class/leds/blue:status/brightness
 

@@ -1,7 +1,4 @@
-luci-app-wol
-luci-app-ttyd
 msmtp
-luci-app-vnstat2
 htop
 btop
 luci-app-statistics

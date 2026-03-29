@@ -1,5 +1,5 @@
-# ~/.oh-my-zsh/custom/plugins/my-custom-commands/my-custom-commands.plugin.zsh
 #!/bin/zsh
+# ~/.oh-my-zsh/custom/plugins/my-custom-commands/my-custom-commands.plugin.zsh
 
 () {
     # 局部变量定义，函数执行完后自动注销
@@ -31,8 +31,4 @@
     # docker compose 快速操作
     #######################################
     alias dcctl="zsh ${_MY_NAS_DIR}/utils/dcctl.zsh"
-
-    # 设置默认编辑器 (export 在匿名函数中依然具有全局环境效力)
-    export VISUAL="nano"
-    export EDITOR="nano"
 }
