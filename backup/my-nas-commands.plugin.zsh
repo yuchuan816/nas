@@ -13,15 +13,6 @@
     alias ucd="source ${_MY_NAS_DIR}/utils/cd.zsh"
 
     #######################################
-    # 代理
-    #######################################
-    # 设置代理并尝试连接 Google (2秒超时) 以验证是否生效
-    alias setp='export https_proxy="http://home.server:20171" http_proxy="http://home.server:20171" all_proxy="socks5://home.server:20170"; echo "代理已开启，正在测试连接..."; curl -I https://www.google.com --connect-timeout 2'
-    alias unsetp='unset https_proxy http_proxy all_proxy ALL_PROXY; echo "代理已关闭"'
-    # 快速查看当前出口 IP
-    alias myip='curl -L ip.p3terx.com'
-
-    #######################################
     # 系统操作
     #######################################
     alias rcp='rsync -avh --progress'
@@ -32,3 +23,4 @@
     #######################################
     alias dcctl="zsh ${_MY_NAS_DIR}/utils/dcctl.zsh"
 }
+
