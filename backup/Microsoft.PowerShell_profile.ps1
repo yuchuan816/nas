@@ -3,11 +3,6 @@ Function SSHRmote {
 }
 Set-Alias -Name nas -Value SSHRmote
 
-Function WakeonLAN {
-    wol -m 1c:86:0b:26:fd:45
-}
-Set-Alias -Name wnas -Value WAKEonLAN
-
 Function EnterUbuntu {
     ubuntu2404.exe
 }

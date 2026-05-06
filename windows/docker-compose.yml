@@ -10,7 +10,7 @@ services:
       PASSWORD: "95816" # 自定义密码
       RAM_SIZE: 3G # 内存大小
       CPU_CORES: "2" # CPU核心数
-      DISK_SIZE: 16G # 磁盘大小
+      DISK_SIZE: 32G # 磁盘大小
     ports:
       # - "8006:8006" # noVNC Web访问端口
       - 3389:3389/tcp # RDP端口 (可选映射)

@@ -18,9 +18,11 @@ services:
     volumes:
       - ./config:/config
       - /mnt/common/shares/fonts:/media/fonts:ro
-      - /mnt/common/shares/.art:/media/art:ro
       - /mnt/series/library:/media/series:ro
       - /mnt/movies/library:/media/movies:ro
+
+      - /mnt/common/shares/.art:/media/art:ro
+      - /mnt/series/art:/media/art2:ro
     devices:
       - /dev/dri:/dev/dri
     networks:
