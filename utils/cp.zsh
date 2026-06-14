@@ -1,36 +1,53 @@
 #!/bin/zsh
 
 () {
-    local tag desc src dst
-    # 配置区
-    local copy_config=(
-        "1" "Movies" "/mnt/common/shares/factory-movies" "/mnt/movies/library"
-        "2" "Series" "/mnt/common/shares/factory-series" "/mnt/series/library"
-    )
+    echo "📂 媒体自动导入工具"
+    echo "-----------------------------------"
 
-    # 1. 构造菜单
-    local menu_args=()
-    for tag desc src dst in "${copy_config[@]}"; do
-        menu_args+=("$tag" "$desc")
-    done
+    # 选项列表
+    local options=("Movies-🎬" "Series-📺" "退出 ❌")
+    local PROMPT="👉 请选择要导入的类型 (输入数字并回车): "
+    local PS3=$'\n'"$PROMPT"
 
-    # 2. 弹出菜单
-    local OPTION=$(whiptail --title "媒体导入工具" --menu "请选择要导入的类型：" 12 45 2 \
-        "${menu_args[@]}" 3>&1 1>&2 2>&3)
+    local opt
+    select opt in "${options[@]}"; do
+        local src=""
+        local dst=""
+        
+        case "$opt" in
+            "退出 ❌")
+                echo "\n👋 已取消操作。"
+                return 0
+                ;;
+            "Movies-🎬")
+                src="/mnt/common/shares/factory-movies"
+                dst="/mnt/movies/library"
+                ;;
+            "Series-📺")
+                src="/mnt/common/shares/factory-series"
+                dst="/mnt/series/library"
+                ;;
+            *)
+                echo "\n❌ 输入错误，请输入有效的数字（1-3）。"
+                continue
+                ;;
+        esac
 
-    # 检查取消操作
-    [[ $? != 0 ]] && return 0
-
-    # 3. 匹配并执行
-    for tag desc src dst in "${copy_config[@]}"; do
-        if [[ "$tag" == "$OPTION" ]]; then
-            echo "📂 正在导入 $desc (已过滤隐藏文件)..."
-            mkdir -p "$dst"
-            
-            rsync -ah --preallocate --info=progress2 --exclude=".*" "$src/" "$dst/"
-            
-            echo "✅ $desc 导入完成！"
-            break
+        # 防止变量空值或误触根目录
+        if [[ -z "$src" || -z "$dst" || "$src" == "/" || "$dst" == "/" ]]; then
+            echo "\n❌ [危险保护] 检测到非法路径！src: '$src', dst: '$dst'。脚本拒绝执行。"
+            return 1
         fi
+
+        # 安全通过，开始执行
+        echo "\n📂 正在导入 $opt (已过滤隐藏文件)..."
+        echo "   源路径: $src/"
+        echo "   目标路径: $dst/"
+        
+        mkdir -p "$dst"
+        rsync -ah --preallocate --info=progress2 --exclude=".*" "$src/" "$dst/"
+        
+        echo "✅ $opt 导入完成！"
+        break
     done
 }

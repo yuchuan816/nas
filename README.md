@@ -45,5 +45,5 @@ sudo systemctl enable --now xxx.servic.service
 ```
 ## 硬盘访问监控
 ```sh
-sudo fatrace -t G --line-buffered /mnt >> /home/tom/code/nas/backup/logs/wake_report.log
+sudo fatrace -t G --line-buffered /mnt >> /home/tom/nas/backup/logs/wake_report.log
 ```

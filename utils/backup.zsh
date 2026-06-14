@@ -2,9 +2,8 @@
 
 () {
     # 使用 local 声明局部变量
-    local BACKUP_DIR="/home/tom/code/nas/backup"
+    local BACKUP_DIR="/home/tom/nas/backup"
     local LOG_FILE="$BACKUP_DIR/logs/backup.log"
-    local OMZ_CONFIG="/home/tom/.oh-my-zsh/custom/plugins/my-nas-commands"
     
     # 局部关联数组
     local -A backup_tasks
@@ -30,11 +29,6 @@
                 echo "[跳过] 目录未挂载: $source"
             fi
         done
-
-        if [[ -d "$OMZ_CONFIG" ]]; then
-            \cp -r "$OMZ_CONFIG/." "$BACKUP_DIR"
-            echo "[成功] 已备份插件配置: $OMZ_CONFIG"
-        fi
 
         echo "--- 备份完成 ---"
         echo ""
