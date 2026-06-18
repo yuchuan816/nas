@@ -2,7 +2,7 @@
 
 () {
     # --- 配置区域 ---
-    local DEFAULT_PROJECT_DIR="$_MY_NAS_DIR"
+    local DEFAULT_PROJECT_DIR="/home/tom/nas"
     local NETWORK_NAME="webnet"
     local USE_SUDO=1
 

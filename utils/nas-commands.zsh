@@ -10,6 +10,11 @@ readonly _MY_NAS_DIR="${_MY_HOME_DIR}/nas"
 alias ucp="zsh ${_MY_NAS_DIR}/utils/cp.zsh"
 
 #######################################
+# docker compose 快速操作
+#######################################
+alias dcctl="zsh ${_MY_NAS_DIR}/utils/dcctl.zsh"
+
+#######################################
 # 关机操作
 #######################################
 off() {
@@ -25,8 +30,3 @@ off() {
         sudo shutdown now
     fi
 }
-
-#######################################
-# docker compose 快速操作
-#######################################
-alias dcctl="zsh ${_MY_NAS_DIR}/utils/dcctl.zsh"

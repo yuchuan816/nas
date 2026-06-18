@@ -171,11 +171,11 @@ services:
         url: "http://dockge.home.server"
         target: "_blank"
 
-      - name: "v2rayA"
-        logo: "/assets/icons/v2raya.png"
+      - name: "mihomo"
+        logo: "/assets/icons/clash.png"
         subtitle: ""
         tag: "system"
-        url: "http://v2raya.home.server"
+        url: "http://mihomodashboard.home.server"
         target: "_blank"
 
       - name: "Nginx Proxy Manager"

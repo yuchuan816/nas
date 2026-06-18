@@ -1,0 +1,29 @@
+services:
+  mihomo:
+    image: metacubex/mihomo:latest
+    container_name: mihomo
+    restart: unless-stopped
+    environment:
+      - TZ=Asia/Shanghai
+    ports:
+      - "7890:7890"   # HTTP/Socks 代理端口
+      # - "9090:9090"   # RESTful API 控制端口
+    volumes:
+      - ./config:/root/.config/mihomo
+    networks:
+      - webnet
+
+  dashboard:
+    image: ghcr.io/metacubex/metacubexd:latest
+    container_name: mihomodashboard
+    restart: unless-stopped
+    environment:
+      - TZ=Asia/Shanghai
+    # ports:
+      # - "80:80"
+    networks:
+      - webnet
+
+networks:
+  webnet:
+    external: true
