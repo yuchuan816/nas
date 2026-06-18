@@ -5,6 +5,8 @@ services:
     restart: unless-stopped
     environment:
       - TZ=Asia/Shanghai
+    labels:
+      - com.centurylinklabs.watchtower.enable=false
     ports:
       - "7890:7890"   # HTTP/Socks 代理端口
       # - "9090:9090"   # RESTful API 控制端口
