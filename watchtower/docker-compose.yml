@@ -14,5 +14,11 @@ services:
       # 依然保留自动清理旧镜像
       - WATCHTOWER_CLEANUP=true
       # 让 Watchtower 的检查请求走代理
-      - HTTP_PROXY=http://home.server:7897
-      - HTTPS_PROXY=http://home.server:7897
+      - HTTP_PROXY=http://forward-proxy:7890
+      - HTTPS_PROXY=http://forward-proxy:7890
+    networks:
+      - webnet
+
+networks:
+  webnet:
+    external: true

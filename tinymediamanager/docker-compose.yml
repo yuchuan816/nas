@@ -10,6 +10,9 @@ services:
       - LC_ALL=en_US.UTF-8
       - LANG=en_US.UTF-8
       - PASSWORD=95816
+
+      - HTTP_PROXY=http://forward-proxy:7890
+      - HTTPS_PROXY=http://forward-proxy:7890
     volumes:
       - ./config:/data
       - /mnt/common/shares:/shares

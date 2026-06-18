@@ -13,7 +13,9 @@ services:
     volumes:
       - ./config:/root/.config/mihomo
     networks:
-      - webnet
+      webnet:
+        aliases:
+          - forward-proxy
 
   dashboard:
     image: ghcr.io/metacubex/metacubexd:latest

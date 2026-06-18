@@ -8,13 +8,14 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=Asia/Shanghai
-      - HTTP_PROXY=http://home.server:7897
-      - HTTPS_PROXY=http://home.server:7897
-      # 启用 Docker Mods 功能
+      - HTTP_PROXY=http://forward-proxy:7890
+      - HTTPS_PROXY=http://forward-proxy:7890
+
+      # Docker Mods 功能
       - DOCKER_MODS=linuxserver/mods:universal-package-install
-      - INSTALL_PACKAGES=fonts-noto-cjk-extra intel-media-va-driver
-      # ports:
-      #   - 8096:8096
+      - INSTALL_PACKAGES=fonts-noto-cjk-extra
+    # ports:
+    #   - 8096:8096
     volumes:
       - ./config:/config
       - /mnt/common/shares/fonts:/media/fonts:ro
@@ -23,10 +24,11 @@ services:
 
       - /mnt/common/shares/.art:/media/art:ro
       - /mnt/series/art:/media/art2:ro
-    devices:
-      - /dev/dri:/dev/dri
+    # devices:
+    #   - /dev/dri:/dev/dri
     networks:
       - webnet
+
 networks:
   webnet:
     external: true

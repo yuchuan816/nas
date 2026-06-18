@@ -3,15 +3,15 @@
 ## 容器代理
 ```yaml
 environment:
-  HTTP_PROXY: http://home.server:7897
-  HTTPS_PROXY: http://home.server:7897
+  HTTP_PROXY: http://forward-proxy:7890
+  HTTPS_PROXY: http://forward-proxy:7890
 ```
 
 ## docker build 代理
 ```sh
 docker build . \
-    --build-arg "HTTP_PROXY=http://home.server:7897" \
-    --build-arg "HTTPS_PROXY=http://home.server:7897" \
+    --build-arg "HTTP_PROXY=http://home.server:7890" \
+    --build-arg "HTTPS_PROXY=http://home.server:7890" \
     -t your/image:tag
 ```
 
@@ -21,8 +21,8 @@ sudo mkdir -p /etc/systemd/system/docker.service.d
 sudo touch /etc/systemd/system/docker.service.d/http-proxy.conf
 
 [Service]
-Environment="HTTP_PROXY=http://home.server:7897"
-Environment="HTTPS_PROXY=http://home.server:7897"
+Environment="HTTP_PROXY=http://home.server:7890"
+Environment="HTTPS_PROXY=http://home.server:7890"
 ```
 
 ## Systemd 单元管理

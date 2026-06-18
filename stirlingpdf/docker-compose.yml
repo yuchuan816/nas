@@ -11,8 +11,8 @@ services:
     #      - ./customFiles:/customFiles/
     #      - ./logs:/logs/
     environment:
-      - HTTP_PROXY=http://home.server:7897
-      - HTTPS_PROXY=http://home.server:7897
+      - HTTP_PROXY=http://forward-proxy:7890
+      - HTTPS_PROXY=http://forward-proxy:7890
       - DOCKER_ENABLE_SECURITY=false
       - INSTALL_BOOK_AND_ADVANCED_HTML_OPS=false
       - LANGS=zh_CN
