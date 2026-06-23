@@ -4,7 +4,7 @@ services:
     image: p3terx/aria2-pro:latest
     environment:
       - PUID=1000
-      - PGID=1000
+      - PGID=100
       - UMASK_SET=022
       - RPC_SECRET=95816
       - RPC_PORT=6800

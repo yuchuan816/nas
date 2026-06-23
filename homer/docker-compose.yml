@@ -2,6 +2,7 @@ services:
   homer:
     image: b4bz/homer
     container_name: homer
+    user: 1000:100
     volumes:
       - ./homer-config:/www/assets # Make sure your local config directory exists
     # ports:

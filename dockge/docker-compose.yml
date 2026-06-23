@@ -9,11 +9,10 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - ./volumes/data:/app/data
-      # 映射所有 Stacks
-      - /home/tom/nas:/home/tom/nas
+      - /home/tom/nas:/home/tom/nas     # 映射所有 Stacks
     environment:
-      #  docker compose 文件路径
-      - DOCKGE_STACKS_DIR=/home/tom/nas
+      - TZ=Asia/Shanghai
+      - DOCKGE_STACKS_DIR=/home/tom/nas #  docker compose 文件路径
     networks:
       - webnet
 networks:

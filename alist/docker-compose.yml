@@ -7,7 +7,7 @@ services:
     environment:
       TZ: Asia/Shanghai
       PUID: 1000
-      PGID: 1000
+      PGID: 100
       UMASK: 2
     volumes:
       - ./config:/opt/alist/data

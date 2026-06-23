@@ -6,7 +6,7 @@ services:
     restart: unless-stopped
     environment:
       - PUID=1000
-      - PGID=1000
+      - PGID=100
       - TZ=Asia/Shanghai
       - HTTP_PROXY=http://forward-proxy:7890
       - HTTPS_PROXY=http://forward-proxy:7890

@@ -7,7 +7,7 @@ services:
     environment:
       - TZ=Asia/Shanghai
       - PUID=1000
-      - PGID=1000
+      - PGID=100
       - WEBUI_PORT=8080
       - TORRENTING_PORT=59547
     ports:

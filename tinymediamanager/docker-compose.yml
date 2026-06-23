@@ -5,7 +5,7 @@ services:
     environment:
       - TZ=Asia/Shanghai
       - USER_ID=1000
-      - GROUP_ID=1000
+      - GROUP_ID=100
       - ALLOW_DIRECT_VNC=true
       - LC_ALL=en_US.UTF-8
       - LANG=en_US.UTF-8

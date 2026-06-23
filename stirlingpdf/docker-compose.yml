@@ -1,20 +1,22 @@
 services:
   stirlingpdf:
     container_name: stirlingpdf
-    image: frooodle/s-pdf:latest
+    image: stirlingtools/stirling-pdf:latest
     restart: unless-stopped
     # ports:
     #   - 8080:8080
     volumes:
-      - ./config/trainingData:/usr/share/tessdata #Required for extra OCR languages
-      - ./config/extraConfigs:/configs
-    #      - ./customFiles:/customFiles/
-    #      - ./logs:/logs/
+      # - ./volumes/tessdata:/usr/share/tessdata   # OCR language files
+      - ./volumes/configs:/configs               # Settings & database
+      - ./volumes/logs:/logs                     # Application logs
+      - ./volumes/pipeline:/pipeline             # Automation configs
     environment:
+      - PUID=1000
+      - PGID=100
+      - TZ=Asia/Shanghai
       - HTTP_PROXY=http://forward-proxy:7890
       - HTTPS_PROXY=http://forward-proxy:7890
-      - DOCKER_ENABLE_SECURITY=false
-      - INSTALL_BOOK_AND_ADVANCED_HTML_OPS=false
+      - SECURITY_ENABLELOGIN=false
       - LANGS=zh_CN
     networks:
       - webnet

@@ -1,27 +1,19 @@
 services:
   samba:
+    image: dockurr/samba:latest
     container_name: samba
-    image: servercontainers/samba:latest
-    restart: "unless-stopped"
-    environment:
-      TZ: Asia/Shanghai
-      AVAHI_NAME: StorageServer
-      ACCOUNT_tom: 95816
-      UID_tom: 1000
-      GROUPS_tom: 1000
-      SAMBA_VOLUME_CONFIG_shares: "[Shares]; path=/shares/shares; valid users = tom; guest ok = no; browsable = yes; read only = no;"
-      SAMBA_VOLUME_CONFIG_movies: "[Movies]; path=/shares/movies; valid users = tom; guest ok = no; browsable = yes; read only = yes;"
-      SAMBA_VOLUME_CONFIG_series: "[Series]; path=/shares/series; valid users = tom; guest ok = no; browsable = yes; read only = yes;"
-
-      SAMBA_VOLUME_CONFIG_ramdisk: "[Ramdisk]; path=/shares/ramdisk; valid users = tom; guest ok = no; browsable = yes; read only = no;"
-      SAMBA_VOLUME_CONFIG_timemachine: "[TimeMachine]; path=/shares/timemachine; valid users = tom; guest ok = no; read only = no; browseable = yes; fruit:time machine = yes; fruit:time machine max size = 500G"
+    restart: unless-stopped
     ports:
       - 139:139
       - 445:445
+    environment:
+      - TZ=Asia/Shanghai
+      - USER=tom
+      - PASS=95816
+      - UID=1000
+      - GID=100
+      - NAME=Storage
     volumes:
-      - /mnt/common/shares:/shares/shares
-      - /mnt/movies/library:/shares/movies
-      - /mnt/series/library:/shares/series
-
-      - /mnt/ramdisk:/shares/ramdisk
-      - /mnt/common/timemachine:/shares/timemachine
+      - /mnt/common/shares:/storage/shares
+      - /mnt/movies/library:/storage/movies:ro     
+      - /mnt/series/library:/storage/series:ro
